@@ -1,10 +1,33 @@
-﻿namespace VumnuiBotProj
+﻿using Discord;
+using Discord.WebSocket;
+using Microsoft.Extensions.Configuration;
+
+
+namespace VumnuiBotProj
 {
     internal class Program
     {
-        static void Main(string[] args)
+
+        private static DiscordSocketClient _socketClient;
+
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello, penis!");
+
+            var configuration = new ConfigurationBuilder().AddJsonFile("C:\\Users\\malya\\OneDrive\\Desktop\\VumnuiBot\\VumnuiBot\\config.json").Build();
+
+            string botToken = configuration["bot_token"];
+
+            
+           
+
         }
+
+        private static Task Log(LogMessage msg)
+        {
+            Console.WriteLine(msg.ToString());
+            return Task.CompletedTask;
+        }
+
+        
     }
 }
