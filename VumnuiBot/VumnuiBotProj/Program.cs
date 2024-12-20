@@ -13,7 +13,7 @@ namespace VumnuiBotProj
         static async Task Main(string[] args)
         {
 
-            var configuration = new ConfigurationBuilder().AddJsonFile("C:\\Users\\malya\\OneDrive\\Desktop\\VumnuiBot\\VumnuiBot\\config.json").Build();
+            var configuration = new ConfigurationBuilder().AddJsonFile("S:\\C# projects\\VumnuiBot\\config.json").Build();
 
             string botToken = configuration["bot_token"];
 
