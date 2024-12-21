@@ -9,16 +9,29 @@ namespace VumnuiBotProj
     {
 
         private static DiscordSocketClient _socketClient;
+        private static string _botToken;
 
         static async Task Main(string[] args)
         {
 
+            _botToken = GetBotToken();
+            _socketClient = new DiscordSocketClient();
+
+
+            await _socketClient.LoginAsync(TokenType.Bot, _botToken);
+
+            await _socketClient.StartAsync();
+
+            await Task.Delay(-1);
+
+
+        }
+
+        private static string GetBotToken()
+        {
             var configuration = new ConfigurationBuilder().AddJsonFile("C:\\Users\\malya\\OneDrive\\Desktop\\VumnuiBot\\VumnuiBot\\config.json").Build();
 
-            string botToken = configuration["bot_token"];
-
-            
-           
+            return configuration["bot_token"];
 
         }
 
