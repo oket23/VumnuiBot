@@ -54,7 +54,6 @@ namespace VumnuiBotProj
 
                 await _socketClient.StartAsync();
 
-                Task.Delay(-1);
             }
             catch (Exception ex) { Console.WriteLine("Помилка: " + ex.ToString()); }
 
@@ -63,19 +62,21 @@ namespace VumnuiBotProj
 
         private async Task StopBotAsync()
         {
-            Console.WriteLine("Завершення роботи. Відключення...");
+            Console.WriteLine("Завершення роботи.");
 
             try
             {
+
+                Console.WriteLine("Вихід з системи...");
                 await _socketClient.LogoutAsync();
 
+                Console.WriteLine("Відключення...");
                 await _socketClient.StopAsync();
 
-                Task.Delay(-1);
             }
             catch (Exception ex) { Console.WriteLine("Помилка: " + ex.ToString()); }
 
-            Console.WriteLine("Бота зупинено!");
+            Console.WriteLine("Бота зупинено.");
         }
 
         private async Task OnReady()
