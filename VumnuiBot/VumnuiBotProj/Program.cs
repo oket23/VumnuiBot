@@ -20,7 +20,6 @@ namespace VumnuiBotProj
         private static ulong OlegUserId = 313225171286884353;
         private static ulong AndriiUserId = 418423106567274506;
         private static ulong KomoryUserId = 585897470035361812;
-        private static ulong HicayneUserId = 483649106628313088;
 
 
         static async Task Main(string[] args)
@@ -72,7 +71,6 @@ namespace VumnuiBotProj
                 await SendPrivateMessage(OlegUserId, textMessage);
                 await SendPrivateMessage(AndriiUserId, textMessage);
                 await SendPrivateMessage(KomoryUserId, textMessage);
-                await SendPrivateMessage(HicayneUserId, textMessage);
             }
             catch (Exception ex) { Console.WriteLine("Помилка! " + ex.ToString()); }
 
@@ -111,7 +109,6 @@ namespace VumnuiBotProj
                 await SendPrivateMessage(OlegUserId, textMessage);
                 await SendPrivateMessage(AndriiUserId, textMessage);
                 await SendPrivateMessage(KomoryUserId, textMessage);
-                await SendPrivateMessage(HicayneUserId, textMessage);
             }
             catch (Exception ex) { Console.WriteLine("Помилка! " + ex.ToString()); }
 
