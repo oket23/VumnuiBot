@@ -9,7 +9,6 @@ namespace VumnuiBotProj
     {
 
         private static DiscordSocketClient _socketClient;
-        private static string _botToken;
 
         private static bool _isRunning;
 
@@ -44,14 +43,14 @@ namespace VumnuiBotProj
         {
 
             _socketClient = new DiscordSocketClient();
-            _botToken = GetBotToken();
+            var botToken = GetBotToken();
 
             _socketClient.Log += Log;
             _socketClient.Ready += OnReady;
 
             try
             {
-                await _socketClient.LoginAsync(TokenType.Bot, _botToken);
+                await _socketClient.LoginAsync(TokenType.Bot, botToken);
 
                 await _socketClient.StartAsync();
 
