@@ -20,6 +20,7 @@ namespace VumnuiBotProj
         private static ulong OlegUserId = 313225171286884353;
         private static ulong AndriiUserId = 418423106567274506;
         private static ulong KomoryUserId = 585897470035361812;
+        private static ulong PurpuraUserId = 571745253783240718;
 
 
         static async Task Main(string[] args)
@@ -63,7 +64,7 @@ namespace VumnuiBotProj
         {
             Console.WriteLine("Завершення роботи бота...");
 
-            string textMessage = "а всьо бля, вирубають:(";
+            string textMessage = "Всьо я в оффлайн. Пурпуру в стойло:(";
 
             try
             {
@@ -71,6 +72,7 @@ namespace VumnuiBotProj
                 await SendPrivateMessage(OlegUserId, textMessage);
                 await SendPrivateMessage(AndriiUserId, textMessage);
                 await SendPrivateMessage(KomoryUserId, textMessage);
+                await SendPrivateMessage(PurpuraUserId, textMessage);
             }
             catch (Exception ex) { Console.WriteLine("Помилка! " + ex.ToString()); }
 
@@ -101,7 +103,7 @@ namespace VumnuiBotProj
         {
             Console.WriteLine($"Bot is ready!");
 
-            string textMessage = "під'йом сука! Мене знову їбашать";
+            string textMessage = "Всім привіт! Пурпура шлюха!";
 
             try
             {
@@ -109,6 +111,7 @@ namespace VumnuiBotProj
                 await SendPrivateMessage(OlegUserId, textMessage);
                 await SendPrivateMessage(AndriiUserId, textMessage);
                 await SendPrivateMessage(KomoryUserId, textMessage);
+                await SendPrivateMessage(PurpuraUserId, textMessage);
             }
             catch (Exception ex) { Console.WriteLine("Помилка! " + ex.ToString()); }
 
@@ -125,7 +128,7 @@ namespace VumnuiBotProj
 
                     var dmChannel = await user.CreateDMChannelAsync();
 
-                    await dmChannel.SendMessageAsync(user.Username + ", " + message);
+                    await dmChannel.SendMessageAsync(message);
 
                     Console.WriteLine($"Повідомлення до {user.Username} успішно доставлене!");
                 }
